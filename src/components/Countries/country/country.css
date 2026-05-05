@@ -1,0 +1,10 @@
+.visited {
+   background-color: rgb(186, 186, 227);
+    border: 2px solid purple;
+}
+
+.not-visited {
+    background: linear-gradient(135degree, rgb(185, 140, 185), rgb(176, 176, 137), rgb(155, 215, 155));
+    border: 2px solid red;
+
+}
