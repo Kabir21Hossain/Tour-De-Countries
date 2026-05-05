@@ -2,19 +2,22 @@ import { useState } from "react"
 import './country.css'
 
 
-export default function Country({ country }) {
+export default function Country({ country,handleVisitedCountries }) {
     const [isVisited, setVisited] = useState(false);
+    
 
-    const handleVisited = () => {
-        // // setVisited(!isVisited);
-        // if(isVisited){
-        //     setVisited(false);
-        // }
-        // else{
-        //     setVisited(true);
-        // }
 
-        setVisited(!isVisited);
+    const handleVisited = (country) => {
+
+        if(!isVisited){
+            handleVisitedCountries(country);
+            setVisited(true);
+        }
+        else{
+            alert("Country is already visited");
+        }
+        
+
 
     }
     const nameStyle = {
@@ -61,7 +64,7 @@ export default function Country({ country }) {
                     ))}
                 </p>
 
-                <button onClick={handleVisited} className='text-[12px] font-semibold btn btn-primary btn-soft w-25 h-7 rounded-lg px-0 py-0'>{
+                <button onClick={() => handleVisited(country)} className='text-[12px] font-semibold btn btn-primary btn-soft w-25 h-7 rounded-lg px-0 py-0'>{
                     isVisited ? "visited" : "Not Visited"}
 
                 </button>
